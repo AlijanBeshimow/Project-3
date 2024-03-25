@@ -37,12 +37,12 @@ def create_task():
     title = new_task.get('title')
     description = new_task.get('description')
     category = new_task.get('category')
-    if title:
+    if title is not None and description is not None and category is not None:
         db.query('''INSERT INTO tasks (title, description, category) VALUES (?,?,?)''',
                  (title, description, category,))
         return jsonify({'message': 'Task added successfully'}), 201
     else:
-        return jsonify({'error': 'Title is missing in the request data'}), 400
+        return jsonify({'error': 'Title, description, or category is missing in the request data'}), 400
 
 
 # UPDATE TASK
