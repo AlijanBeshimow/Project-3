@@ -25,7 +25,8 @@ def test_get_task_by_id():
 
 # TESTING CREATE
 def test_create_task():
-    task_data = {'title': 'New Task'}
+    task_data = {'title': 'New Task',
+                 'description': 'Task Description', 'category': 'Task Category'}
     response = requests.post(TEST_URL, json=task_data)
     assert response.status_code == 201
     assert 'message' in response.json()

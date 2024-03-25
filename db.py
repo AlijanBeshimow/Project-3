@@ -11,4 +11,11 @@ def query(sql, params=()):
     return result
 
 
-query('CREATE TABLE IF NOT EXISTS tasks (id INTEGER PRIMARY KEY, title TEXT, description TEXT, category TEXT)')
+query('''
+CREATE TABLE IF NOT EXISTS tasks (
+    id INTEGER PRIMARY KEY,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    category TEXT NOT NULL
+)
+''')
