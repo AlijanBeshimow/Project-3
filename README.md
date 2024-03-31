@@ -15,4 +15,9 @@ http://127.0.0.1:5000/api/tasks - To See All Tasks
 
 http://127.0.0.1:5000/api/tasks/id - Create - Update - Delete using ID of specific TASK
 
-
+Create with postman: 
+{
+    "title":"",
+    "description":"",
+    "category":""
+}
